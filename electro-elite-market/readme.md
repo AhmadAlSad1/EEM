@@ -44,4 +44,4 @@ Bijdragen aan dit project zijn welkom. Als je een bug vindt of een verbetering v
 
 ## Licentie
 
-Dit project wordt vrijgegeven onder de [MIT-licentie](LICENSE). (Niet beschikbaar voor nu)
+Dit project wordt vrijgegeven onder de [MIT-licentie](LICENSE). (Niet beschikbaar voor nu).
