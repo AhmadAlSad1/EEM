@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Admin</title>
+    <link rel="stylesheet" href="products-admin.css">
+    <script src="products-admin.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <h1>Admin Panel</h1>
+        <ul>
+            <li><a href="admin.html" id="orders-link">Orders</a></li>
+            <li><a href="products-admin.html" id="products-link" class="active">Products</a></li>
+        </ul>
+    </nav>
+    <button id="reset-changes-btn">Reset Changes</button>
+    <header>
+        <a href="add-product.html" id="add-product-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-circle"
+            viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+            <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+        </svg></a>
+    </header>
+    <table id="product-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="product-list">
+        </tbody>
+    </table>
+</body>
+
+</html>

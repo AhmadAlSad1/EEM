@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'sparten', sans-serif;
+}
+
+nav {
+    background: #e3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+}
+
+nav h1 {
+    color: #222;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #222;
+    text-decoration: none;
+}
+
+navbar li a:hover,
+navbar li a.active {
+    color: lightskyblue;
+}
+
+navbar li a.active::after,
+navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: lightskyblue;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+header {
+    display: flex;
+}
+
+#reset-changes-btn {
+    background-color: darkgray;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+}
+
+#reset-changes-btn:hover {
+    background-color: darkslategray;
+}
+
+#add-product-btn {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+#product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#product-table th,
+#product-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#product-table th {
+    background-color: darkgray;
+    color: white;
+}
+
+#product-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#product-table img {
+    max-width: 100px;
+}
+
+#product-table button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkgray;
+    color: white;
+}
