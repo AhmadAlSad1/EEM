@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', function () {
             products: cart.map(product => ({
                 name: product.name,
                 price: product.price,
-                quantity: product.quantity
+                quantity: product.quantity,
             })),
             total: cart.reduce((acc, product) => acc + product.price * product.quantity, 0),
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
         };
 
         orders.push(newOrder);

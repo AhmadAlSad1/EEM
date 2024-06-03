@@ -103,7 +103,7 @@ function updateData(i) {
     submit.innerHTML = 'Update';
     mood = 'update';
     tmp = i;
-    scroll({
+    window.scrollTo({
         top: 0,
         behavior: 'smooth',
     });
@@ -126,7 +126,7 @@ async function fetchJSONData() {
             title: item.name,
             price: item.price,
             url: item.image,
-            count: 1
+            count: 1,
         }));
     } catch (error) {
         console.error('Error fetching JSON data:', error);
