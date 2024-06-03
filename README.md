@@ -12,7 +12,7 @@ git clone <repository_url>
 
 cd EEM
 
-3. Open de `home.html`-pagina in een webbrowser.
+3. Open de `index.html`-pagina in een webbrowser.
 
 ## Gebruik
 
