@@ -1,51 +1,36 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const productContainer = document.getElementById('product-container');
     const cartIcon = document.getElementById('cart-icon');
-    fetchProducts();
 
-    function fetchProducts() {
-        let products = JSON.parse(localStorage.getItem('product')) || [];
+    const fetchProducts = () => {
+        const products = JSON.parse(localStorage.getItem('product')) || [];
         products.forEach(product => {
-            const card = createProductCard(product);
-            productContainer.appendChild(card);
+            productContainer.appendChild(createProductCard(product));
         });
-    }
+    };
 
-    function createProductCard(product) {
+    const createProductCard = (product) => {
         const card = document.createElement('div');
-        card.classList.add('card');
-
-        const img = document.createElement('img');
-        img.src = product.url;
-        img.alt = product.title;
-        card.appendChild(img);
-
-        const name = document.createElement('h2');
-        name.textContent = product.title;
-        card.appendChild(name);
-
-        const price = document.createElement('p');
-        price.textContent = `€${product.price}`;
-        card.appendChild(price);
-
-        const button = document.createElement('button');
-        button.classList.add('btn');
-        button.textContent = 'Add to Cart';
-        button.addEventListener('click', function () {
+        card.className = 'card';
+        card.innerHTML = `
+            <img src="${product.url}" alt="${product.title}">
+            <h2>${product.title}</h2>
+            <p>€${product.price}</p>
+            <button class="btn">Add to Cart</button>
+        `;
+        card.querySelector('button').addEventListener('click', () => {
             addToCart(product);
             showNotificationCircle();
         });
-        card.appendChild(button);
-
         return card;
-    }
+    };
 
-    function addToCart(product) {
+    const addToCart = (product) => {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const existingProductIndex = cart.findIndex(item => item.title === product.title);
+        const existingProduct = cart.find(item => item.title === product.title);
 
-        if (existingProductIndex !== -1) {
-            cart[existingProductIndex].quantity++;
+        if (existingProduct) {
+            existingProduct.quantity++;
         } else {
             product.quantity = 1;
             cart.push(product);
@@ -53,11 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         localStorage.setItem('cart', JSON.stringify(cart));
         console.log('Product toegevoegd aan winkelwagen:', product);
-    }
+    };
 
-    function showNotificationCircle() {
-        const notificationCircle = document.createElement('div');
-        notificationCircle.classList.add('notification-circle');
-        cartIcon.appendChild(notificationCircle);
-    }
+    const showNotificationCircle = () => {
+        if (!cartIcon.querySelector('.notification-circle')) {
+            const notificationCircle = document.createElement('div');
+            notificationCircle.className = 'notification-circle';
+            cartIcon.appendChild(notificationCircle);
+        }
+    };
+
+    fetchProducts();
 });
