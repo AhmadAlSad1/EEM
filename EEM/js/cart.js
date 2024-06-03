@@ -7,34 +7,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         cartTableBody.innerHTML = '';
 
-        const rows = cart.map(product => {
+        let totalPrice = 0;
+        cart.forEach((product, index) => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${product.name}</td>
+                <td>${product.title}</td>
                 <td>${product.quantity}</td>
                 <td>€${product.price}</td>
                 <td>€${(product.quantity * parseFloat(product.price)).toFixed(2)}</td>
-                <td><button class="remove-button">Remove</button></td>
+                <td><button class="remove-button" data-index="${index}">Remove</button></td>
             `;
-            row.querySelector('.remove-button').addEventListener('click', () => {
-                removeFromCart(product.name);
-                displayCart();
-            });
-            return row;
+            cartTableBody.appendChild(row);
+
+            totalPrice += product.quantity * parseFloat(product.price);
         });
 
-        rows.forEach(row => cartTableBody.appendChild(row));
-
-        const totalPrice = cart.reduce((total, product) => total + product.quantity * parseFloat(product.price), 0);
         totalPriceElement.textContent = `Total Price: €${totalPrice.toFixed(2)}`;
         confirmOrderButton.disabled = cart.length === 0;
+
+        document.querySelectorAll('.remove-button').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const index = event.target.getAttribute('data-index');
+                removeFromCart(index);
+                displayCart();
+            });
+        });
     };
 
-    const removeFromCart = (productName) => {
+    const removeFromCart = (index) => {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart = cart.filter(product => product.name !== productName);
+        cart.splice(index, 1);
         localStorage.setItem('cart', JSON.stringify(cart));
-        console.log('Product removed from cart:', productName);
+        console.log('Product removed from cart:', index);
     };
 
     confirmOrderButton.addEventListener('click', () => {
