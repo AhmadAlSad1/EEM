@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'sparten', sans-serif;
+}
+
+body {
+    background-color: #535252;
+    color: #fff;
+}
+
+nav {
+    background: #e3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+}
+
+nav h1 {
+    color: #222;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #222;
+    text-decoration: none;
+}
+
+navbar li a:hover,
+navbar li a.active {
+    color: lightskyblue;
+}
+
+navbar li a.active::after,
+navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: lightskyblue;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+.crud {
+    width: 80%;
+    margin: auto;
+}
+
+.head {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    background: #111;
+    margin: 4px 0;
+    border-radius: 4px;
+    padding: 4px;
+    color: #fff;
+}
+
+input:focus {
+    background: #000;
+    transform: scale(1.1);
+}
+
+button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: rgb(83, 166, 198);
+    color: #fff;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background: rgb(122, 198, 245);
+    letter-spacing: 1px;
+}
+
+#deleteAll {
+    margin: 20px 0;
+}
+
+table button:hover {
+    transform: scale(1.1);
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+table th {
+    text-transform: uppercase;
+}
+
+th,td {
+    padding: 5px;
+}
+
+#resetButton {
+    width: 75px;
+}
