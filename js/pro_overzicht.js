@@ -120,7 +120,7 @@ resetButton.onclick = function () {
 
 async function fetchJSONData() {
     try {
-        const response = await fetch('../json/products.json');
+        const response = await fetch('/json/products.json'`);
         const data = await response.json();
         return data.map(item => ({
             title: item.name,
