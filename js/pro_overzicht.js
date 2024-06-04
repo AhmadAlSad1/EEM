@@ -114,13 +114,13 @@ resetButton.onclick = function () {
     fetchJSONData().then(initialData => {
         dataProduct = initialData;
         localStorage.setItem('product', JSON.stringify(dataProduct));
-        showData();
+        showData(); 
     });
 };
 
 async function fetchJSONData() {
     try {
-        const response = await fetch('/json/products.json'`);
+        const response = await fetch('/json/products.json');
         const data = await response.json();
         return data.map(item => ({
             title: item.name,
