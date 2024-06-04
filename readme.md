@@ -1,4 +1,4 @@
-# ElectroEliteMarket(EEM)
+`# ElectroEliteMarket(EEM)
 
 Dit project is een webshop voor elektronica, waar gebruikers kunnen bladeren door beschikbare producten, winkelwagenfunctionaliteit kunnen gebruiken en bestellingen kunnen plaatsen. Het omvat ook een admin-gedeelte voor het beheren van producten en bestellingen.
 
@@ -6,11 +6,15 @@ Dit project is een webshop voor elektronica, waar gebruikers kunnen bladeren doo
 
 1. Clone de repository naar je lokale machine:
 
+```bash
 git clone <repository_url>
+```
 
 2. Navigeer naar de hoofdmap van het project:
 
+```bash
 cd EEM
+```
 
 3. Open de `index.html`-pagina in een webbrowser.
 
@@ -45,3 +49,4 @@ Bijdragen aan dit project zijn welkom. Als je een bug vindt of een verbetering v
 ## Licentie
 
 Dit project wordt vrijgegeven onder de [MIT-licentie](LICENSE).
+`
